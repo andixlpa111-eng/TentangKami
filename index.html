@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Anggita ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #111;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        body::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #D4A373;
+            border-radius: 10px;
+        }
+
+        section {
+            padding: 90px 10%;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        p {
+            line-height: 2;
+            color: #ddd;
+        }
+
+        span {
+            color: #D4A373;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* OPEN SCREEN */
+
+        #opening {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 99999;
+            transition: 1.2s;
+        }
+
+        #opening h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        #opening p {
+            color: #bbb;
+            margin-top: 15px;
+        }
+
+        .open-btn {
+            margin-top: 35px;
+            padding: 15px 40px;
+            border: none;
+            background: #D4A373;
+            color: white;
+            border-radius: 40px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .4s;
+        }
+
+        .open-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* HERO */
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+        }
+
+        /* BUTTON MUSIC */
+
+        .music-btn {
+            margin-top: 40px;
+            padding: 15px 35px;
+            background: transparent;
+            border: 2px solid #D4A373;
+            color: #D4A373;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: .4s;
+        }
+
+        .music-btn:hover {
+            background: #D4A373;
+            color: white;
+        }
+
+        /* TITLE */
+
+        .title {
+            text-align: center;
+            font-size: 45px;
+            margin-bottom: 50px;
+            color: #D4A373;
+        }
+
+        /* CARD */
+
+        .card {
+            background: #1b1b1b;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 0 30px rgba(212, 163, 115, .1);
+        }
+
+        /* COUNTDOWN */
+
+        .counter {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .box {
+            background: #1b1b1b;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .box h1 {
+            font-size: 50px;
+            color: #D4A373;
+        }
+
+        /* SLIDER */
+
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 25px;
+        }
+
+        .slide {
+            display: none;
+            animation: fade 1s;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 650px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .3;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* LETTER */
+
+        #typing {
+            font-size: 18px;
+            line-height: 2.3;
+            color: #ddd;
+            white-space: pre-line;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 120px 10%;
+            text-align: center;
+        }
+
+        footer h1 {
+            font-size: 55px;
+            margin-bottom: 25px;
+            color: #D4A373;
+        }
+
+        footer p {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* STARS */
+
+        .star {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: blink 3s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: .2;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: .2;
+            }
+        }
+
+        /* HEART */
+
+        .heart {
+            position: fixed;
+            color: #ff4d6d;
+            font-size: 20px;
+            animation: heart 5s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes heart {
+            0% {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+
+        /* SAKURA */
+
+        .sakura {
+            position: fixed;
+            font-size: 20px;
+            animation: sakura 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes sakura {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .title {
+                font-size: 32px;
+            }
+
+            .slide img {
+                height: 420px;
+            }
+
+            .box h1 {
+                font-size: 40px;
+            }
+
+            .card {
+                padding: 30px;
+            }
+
+            #opening h1 {
+                font-size: 40px;
+            }
+
+            footer h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- AUDIO -->
+    <audio id="music" loop>
+        <source src="lagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- OPENING -->
+    <div id="opening">
+        <h1>Happy Birthday ❤️</h1>
+        <h2>Anggita Rahma Nurul Zahra</h2>
+        <p>19 Juli 2007</p>
+        <button class="open-btn" onclick="openWebsite()">Tap To Open ✨</button>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Happy Birthday <span>My Love</span> 🤍</h1>
+            <p>Terima kasih sudah hadir dan menjadi rumah bagiku. Terima kasih sudah membuat hari-hariku terasa lebih
+                indah. Dan terima kasih karena pada tanggal 15 Desember 2025, kita memulai cerita kita bersama ❤️</p>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section>
+        <div class="container">
+            <h1 class="title">❤️ Sejak 15 Desember 2025</h1>
+            <div class="counter">
+                <div class="box">
+                    <h1 id="days">0</h1>
+                    <p>Hari</p>
+                </div>
+                <div class="box">
+                    <h1 id="hours">0</h1>
+                    <p>Jam</p>
+                </div>
+                <div class="box">
+                    <h1 id="minutes">0</h1>
+                    <p>Menit</p>
+                </div>
+                <div class="box">
+                    <h1 id="seconds">0</h1>
+                    <p>Detik</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDER FOTO -->
+    <section>
+        <div class="container">
+            <h1 class="title">📸 Kenangan Kita</h1>
+            <div class="slider">
+                <div class="slide"><img src="foto1.jpeg" alt="Kenangan 1"></div>
+                <div class="slide"><img src="foto2.jpeg" alt="Kenangan 2"></div>
+                <div class="slide"><img src="foto3.jpeg" alt="Kenangan 3"></div>
+                <div class="slide"><img src="foto4.jpeg" alt="Kenangan 4"></div>
+                <div class="slide"><img src="foto5.jpeg" alt="Kenangan 5"></div>
+                <div class="slide"><img src="foto6.jpeg" alt="Kenangan 6"></div>
+                <div class="slide"><img src="foto7.jpeg" alt="Kenangan 7"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SURAT CINTA -->
+    <section>
+        <div class="container">
+            <h1 class="title">💌 Untuk Kamu</h1>
+            <div class="card">
+                <p id="typing"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOA -->
+    <section>
+        <div class="container">
+            <h1 class="title">🌷 Doaku Untukmu</h1>
+            <div class="card">
+                <p>✨ Semoga Allah selalu menjaga setiap langkahmu. <br><br>✨ Semoga semua impian dan cita-citamu
+                    dimudahkan dan diwujudkan satu per satu. <br><br>✨ Semoga kamu selalu sehat, panjang umur, dan
+                    dilimpahkan rezeki yang berkah. <br><br>✨ Semoga semua kesedihanmu diganti dengan kebahagiaan yang
+                    lebih besar. <br><br>✨ Semoga setiap doa yang kamu panjatkan diam-diam dikabulkan oleh Allah SWT.
+                    <br><br>✨ Semoga senyummu selalu terjaga. <br><br>✨ Dan semoga, jika Allah mengizinkan, kita bisa
+                    terus bersama dan merayakan banyak ulang tahun lainnya bersama-sama. <br><br>Aamiin 🤍
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENUTUP -->
+    <footer>
+        <h1>Happy Birthday My Love ❤️</h1>
+        <p>Terima kasih sudah hadir di hidupku. <br><br>Terima kasih sudah menjadi rumah. <br><br>Dan terima kasih sudah
+            membuatku merasakan bahwa dicintai itu ternyata seindah ini. <br><br>I Love You, Always and Forever ❤️
+            <br><br>— Dari seseorang yang akan selalu memilihmu 🤍
+        </p>
+    </footer>
+
+    <script>
+        function openWebsite() {
+            document.getElementById("opening").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("opening").style.display = "none";
+            }, 1000);
+            playMusic();
+        }
+
+        function playMusic() {
+            const music = document.getElementById("music");
+
+            music.play().catch(err => {
+                console.log("Gagal memutar musik:", err);
+            });
+        }
+        function updateCounter() {
+            let start = new Date("December 15, 2025 00:00:00").getTime();
+            let now = new Date().getTime();
+            let distance = now - start;
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+        }
+
+        updateCounter();
+        setInterval(updateCounter, 1000);
+
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3500);
+        }
+
+        const text = `
+
+Hai sayangku,
+
+Selamat ulang tahun ❤️
+
+Terima kasih karena sudah hadir di hidupku.
+Terima kasih karena sudah memilih untuk bertahan.
+
+Aku bersyukur dipertemukan denganmu,
+dan lebih bersyukur lagi karena
+15 Desember 2025 menjadi awal cerita kita.
+
+Aku mungkin tidak sempurna,
+tetapi aku akan selalu berusaha
+menjadi tempat pulang yang nyaman untukmu.
+
+Semoga di umur yang baru ini,
+kamu selalu bahagia,
+selalu sehat,
+dan selalu dikelilingi orang-orang baik.
+
+Aku mencintaimu,
+hari ini,
+besok,
+dan seterusnya.
+
+🤍
+
+`;
+
+        let i = 0;
+
+        function typing() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, 40);
+            }
+        }
+
+        typing();
+
+        for (let i = 0; i < 120; i++) {
+            let star = document.createElement("div");
+            star.className = "star";
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.top = Math.random() * 100 + "vh";
+            star.style.animationDelay = Math.random() * 3 + "s";
+            document.body.appendChild(star);
+        }
+
+        setInterval(() => {
+            let heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 15 + "px";
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }, 400);
+
+        setInterval(() => {
+            let sakura = document.createElement("div");
+            sakura.className = "sakura";
+            sakura.innerHTML = "🌸";
+            sakura.style.left = Math.random() * 100 + "vw";
+            sakura.style.fontSize = Math.random() * 20 + 15 + "px";
+            document.body.appendChild(sakura);
+            setTimeout(() => {
+                sakura.remove();
+            }, 8000);
+        }, 900);
+    </script>
+</body>
+
+</html>
